@@ -189,11 +189,11 @@ export class ConnectionError implements Error {
   public code: string;
 }
 
-class columns {
+declare class columns {
   public add(name: string, type: any, options: any): void;
 }
 
-class rows {
+declare class rows {
   public add(...row: any[]): void;
 }
 
