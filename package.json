@@ -1,0 +1,32 @@
+{
+    "name": "@cw-types/mssql",
+    "version": "1.0.0",
+    "author": "Kavan J. Shaban (Cycloware, LLC)",
+    "description": "Typescript typings for `mssql` `4.0.4` that support bluebird",
+    "homepage": "https://github.com/Cycloware/cw-types-bluebird",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Cycloware/cw-types-bluebird.git"
+    },
+    "contributors": [
+        {
+            "name": "Kavan Shaban",
+            "url": "https://github.com/kavanshaban"
+        },
+        {
+            "name": "Cycloware",
+            "url": "https://github.com/cycloware"
+        }
+    ],
+    "main": "",
+    "dependencies": {
+        "@cw-types/bluebird": "*"
+    },
+    "scripts": {},
+    "keywords": [
+        "@types",
+        "mssql",
+        "bluebird",
+        "typescript"
+    ]
+}
