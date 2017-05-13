@@ -3,9 +3,9 @@
  * that support `bluebird`
  */
 
-// Type definitions for mssql 4.0.1
+// Type definitions for mssql 3.3
 // Project: https://www.npmjs.com/package/mssql
-// Definitions by: COLSA Corporation <http://www.colsa.com/>, Ben Farr <https://github.com/jaminfarr>, Vitor Buzinaro <https://github.com/buzinas>, Matt Richardson <https://github.com/mrrichar/>, Jørgen Elgaard Larsen <https://github.com/elhaard/>, Peter Keuter <https://github.com/pkeuter/>
+// Definitions by: COLSA Corporation <http://www.colsa.com/>, Ben Farr <https://github.com/jaminfarr>, Vitor Buzinaro <https://github.com/buzinas>, Matt Richardson <https://github.com/mrrichar/>, Jørgen Elgaard Larsen <https://github.com/elhaard/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 /// <reference types="node" />
@@ -32,40 +32,40 @@ export interface ISqlTypeFactoryWithPrecisionScale extends ISqlTypeFactory { (pr
 export interface ISqlTypeFactoryWithTvpType extends ISqlTypeFactory { (tvpType: any): ISqlTypeWithTvpType }
 
 
-export declare var VarChar: ISqlTypeFactoryWithLength;
-export declare var NVarChar: ISqlTypeFactoryWithLength;
-export declare var Text: ISqlTypeFactoryWithNoParams;
-export declare var Int: ISqlTypeFactoryWithNoParams;
-export declare var BigInt: ISqlTypeFactoryWithNoParams;
-export declare var TinyInt: ISqlTypeFactoryWithNoParams;
-export declare var SmallInt: ISqlTypeFactoryWithNoParams;
-export declare var Bit: ISqlTypeFactoryWithNoParams;
-export declare var Float: ISqlTypeFactoryWithNoParams;
-export declare var Numeric: ISqlTypeFactoryWithPrecisionScale;
-export declare var Decimal: ISqlTypeFactoryWithPrecisionScale;
-export declare var Real: ISqlTypeFactoryWithNoParams;
-export declare var Date: ISqlTypeFactoryWithNoParams;
-export declare var DateTime: ISqlTypeFactoryWithNoParams;
-export declare var DateTime2: ISqlTypeFactoryWithScale;
-export declare var DateTimeOffset: ISqlTypeFactoryWithScale;
-export declare var SmallDateTime: ISqlTypeFactoryWithNoParams;
-export declare var Time: ISqlTypeFactoryWithScale;
-export declare var UniqueIdentifier: ISqlTypeFactoryWithNoParams;
-export declare var SmallMoney: ISqlTypeFactoryWithNoParams;
-export declare var Money: ISqlTypeFactoryWithNoParams;
-export declare var Binary: ISqlTypeFactoryWithNoParams;
-export declare var VarBinary: ISqlTypeFactoryWithLength;
-export declare var Image: ISqlTypeFactoryWithNoParams;
-export declare var Xml: ISqlTypeFactoryWithNoParams;
-export declare var Char: ISqlTypeFactoryWithLength;
-export declare var NChar: ISqlTypeFactoryWithLength;
-export declare var NText: ISqlTypeFactoryWithNoParams;
-export declare var TVP: ISqlTypeFactoryWithTvpType;
-export declare var UDT: ISqlTypeFactoryWithNoParams;
-export declare var Geography: ISqlTypeFactoryWithNoParams;
-export declare var Geometry: ISqlTypeFactoryWithNoParams;
+export var VarChar: ISqlTypeFactoryWithLength;
+export var NVarChar: ISqlTypeFactoryWithLength;
+export var Text: ISqlTypeFactoryWithNoParams;
+export var Int: ISqlTypeFactoryWithNoParams;
+export var BigInt: ISqlTypeFactoryWithNoParams;
+export var TinyInt: ISqlTypeFactoryWithNoParams;
+export var SmallInt: ISqlTypeFactoryWithNoParams;
+export var Bit: ISqlTypeFactoryWithNoParams;
+export var Float: ISqlTypeFactoryWithNoParams;
+export var Numeric: ISqlTypeFactoryWithPrecisionScale;
+export var Decimal: ISqlTypeFactoryWithPrecisionScale;
+export var Real: ISqlTypeFactoryWithNoParams;
+export var Date: ISqlTypeFactoryWithNoParams;
+export var DateTime: ISqlTypeFactoryWithNoParams;
+export var DateTime2: ISqlTypeFactoryWithScale;
+export var DateTimeOffset: ISqlTypeFactoryWithScale;
+export var SmallDateTime: ISqlTypeFactoryWithNoParams;
+export var Time: ISqlTypeFactoryWithScale;
+export var UniqueIdentifier: ISqlTypeFactoryWithNoParams;
+export var SmallMoney: ISqlTypeFactoryWithNoParams;
+export var Money: ISqlTypeFactoryWithNoParams;
+export var Binary: ISqlTypeFactoryWithNoParams;
+export var VarBinary: ISqlTypeFactoryWithLength;
+export var Image: ISqlTypeFactoryWithNoParams;
+export var Xml: ISqlTypeFactoryWithNoParams;
+export var Char: ISqlTypeFactoryWithLength;
+export var NChar: ISqlTypeFactoryWithLength;
+export var NText: ISqlTypeFactoryWithNoParams;
+export var TVP: ISqlTypeFactoryWithTvpType;
+export var UDT: ISqlTypeFactoryWithNoParams;
+export var Geography: ISqlTypeFactoryWithNoParams;
+export var Geometry: ISqlTypeFactoryWithNoParams;
 
-export declare var TYPES: {
+export var TYPES: {
   VarChar: ISqlTypeFactoryWithLength;
   NVarChar: ISqlTypeFactoryWithLength;
   Text: ISqlTypeFactoryWithNoParams;
@@ -100,17 +100,20 @@ export declare var TYPES: {
   Geometry: ISqlTypeFactoryWithNoParams;
 };
 
-export declare var MAX: number;
-export declare var fix: boolean;
-// export declare var Promise: any;
+export var MAX: number;
+export var fix: boolean;
+
+// still need this to change promise library
+// export var Promise: any;
+
 
 interface IMap extends Array<{ js: any, sql: any }> {
   register(jstype: any, sql: any): void;
 }
 
-export declare var map: IMap;
+export var map: IMap;
 
-export declare var DRIVERS: string[];
+export var DRIVERS: string[];
 export interface IColumnMetadata {
   [name: string]: {
     index: number;
@@ -120,22 +123,13 @@ export interface IColumnMetadata {
     udt?: any;
   }
 }
-export interface IResult<T> {
-  recordsets: IRecordSet<T>[];
-  recordset: IRecordSet<T>;
-  rowsAffected: number[],
-  output: { [key: string]: any };
-}
-export interface IProcedureResult<T> extends IResult<T> {
-  returnValue: any;
-}
 export interface IRecordSet<T> extends Array<T> {
   columns: IColumnMetadata;
 }
 
 type IIsolationLevel = number;
 
-export declare var ISOLATION_LEVEL: {
+export var ISOLATION_LEVEL: {
   READ_UNCOMMITTED: IIsolationLevel
   READ_COMMITTED: IIsolationLevel
   REPEATABLE_READ: IIsolationLevel
@@ -160,7 +154,7 @@ export interface IPool {
   idleTimeoutMillis: number;
 }
 
-export declare var pool: IPool;
+export var pool: IPool;
 
 export interface config {
   driver?: string;
@@ -177,36 +171,33 @@ export interface config {
   pool?: IPool;
 }
 
-export declare class ConnectionPool extends events.EventEmitter {
+export class Connection extends events.EventEmitter {
   public connected: boolean;
   public connecting: boolean;
   public driver: string;
   public constructor(config: config, callback?: (err?: any) => void);
-  public constructor(connectionString: string, callback?: (err?: any) => void);
-  public query(strings: TemplateStringsArray, ...interpolations: any[]): Promise<IResult<any>>;
-  public connect(): Promise<ConnectionPool>;
+  public connect(): Promise<Connection>;
   public connect(callback: (err: any) => void): void;
   public close(): Promise<void>;
   public close(callback: (err: any) => void): void;
-  public request(): Request;
 }
 
-export declare class ConnectionError implements Error {
+export class ConnectionError implements Error {
   constructor(message: string, code?: any)
   public name: string;
   public message: string;
   public code: string;
 }
 
-declare class columns {
+class columns {
   public add(name: string, type: any, options: any): void;
 }
 
-declare class rows {
+class rows {
   public add(...row: any[]): void;
 }
 
-export declare class Table {
+export class Table {
   public create: boolean;
   public columns: columns;
   public rows: rows;
@@ -226,45 +217,49 @@ interface IRequestParameters {
   }
 }
 
-export declare class Request extends events.EventEmitter {
+export class Request extends events.EventEmitter {
+  public connection: Connection;
   public transaction: Transaction;
   public pstatement: PreparedStatement;
   public parameters: IRequestParameters;
   public verbose: boolean;
+  public multiple: boolean;
   public canceled: boolean;
   public stream: any;
-  public constructor(connection?: ConnectionPool);
+  public constructor(connection?: Connection);
   public constructor(transaction: Transaction);
   public constructor(preparedStatement: PreparedStatement);
-  public execute(procedure: string): Promise<IProcedureResult<any>>;
-  public execute<Entity>(procedure: string): Promise<IProcedureResult<Entity>>;
-  public execute<Entity>(procedure: string, callback: (err?: any, recordsets?: IProcedureResult<Entity>, returnValue?: any) => void): void;
+  public execute(procedure: string): Promise<IRecordSet<any>>;
+  public execute<Entity>(procedure: string): Promise<IRecordSet<Entity>>;
+  public execute<Entity>(procedure: string, callback: (err?: any, recordsets?: IRecordSet<Entity>, returnValue?: any, rowsAffected?: number) => void): void;
   public input(name: string, value: any): Request;
   public input(name: string, type: any, value: any): Request;
   public output(name: string, type: any, value?: any): Request;
   public pipe(stream: NodeJS.WritableStream): NodeJS.WritableStream;
-  public query(command: string): Promise<IResult<any>>;
-  public query<Entity>(command: string): Promise<IResult<Entity>>;
-  public query<Entity>(command: string, callback: (err?: Error, recordset?: IResult<Entity>) => void): void;
-  public batch(batch: string): Promise<IResult<any>>;
-  public batch<Entity>(batch: string): Promise<IResult<Entity>>;
-  public batch(batch: string, callback: (err?: Error, recordset?: IResult<any>) => void): void;
-  public batch<Entity>(batch: string, callback: (err?: any, recordset?: IResult<Entity>) => void): void;
+  public query(command: string): Promise<IRecordSet<any>>;
+  public query<Entity>(command: string): Promise<IRecordSet<Entity>>;
+  public query<Entity>(command: string, callback: (err?: Error, recordset?: IRecordSet<Entity>, rowsAffected?: number) => void): void;
+  public query<Entity>(command: string, callback: (err?: Error, recordset?: IRecordSet<Entity>) => void): void;
+  public batch(batch: string): Promise<IRecordSet<any>>;
+  public batch<Entity>(batch: string): Promise<IRecordSet<Entity>>;
+  public batch(batch: string, callback: (err?: Error, recordset?: IRecordSet<any>) => void): void;
+  public batch<Entity>(batch: string, callback: (err?: any, recordset?: IRecordSet<Entity>) => void): void;
   public bulk(table: Table): Promise<number>;
   public bulk(table: Table, callback: (err: Error, rowCount: any) => void): void;
   public cancel(): void;
 }
 
-export declare class RequestError implements Error {
+export class RequestError implements Error {
   constructor(message: string, code?: any)
   public name: string;
   public message: string;
   public code: string;
 }
 
-export declare class Transaction extends events.EventEmitter {
+export class Transaction extends events.EventEmitter {
+  public connection: Connection;
   public isolationLevel: IIsolationLevel;
-  public constructor(connection?: ConnectionPool);
+  public constructor(connection?: Connection);
   public begin(isolationLevel?: IIsolationLevel): Promise<void>;
   public begin(isolationLevel?: IIsolationLevel, callback?: (err?: any) => void): void;
   public commit(): Promise<void>;
@@ -273,20 +268,22 @@ export declare class Transaction extends events.EventEmitter {
   public rollback(callback: (err?: any) => void): void;
 }
 
-export declare class TransactionError implements Error {
+export class TransactionError implements Error {
   constructor(message: string, code?: any)
   public name: string;
   public message: string;
   public code: string;
 }
 
-export declare class PreparedStatement extends events.EventEmitter {
+export class PreparedStatement extends events.EventEmitter {
+  public connection: Connection;
   public transaction: Transaction;
   public prepared: boolean;
   public statement: string;
   public parameters: IRequestParameters;
+  public multiple: boolean;
   public stream: any;
-  public constructor(connection?: ConnectionPool);
+  public constructor(connection?: Connection);
   public input(name: string, type: ISqlType): PreparedStatement;
   public output(name: string, type: ISqlType): PreparedStatement;
   public prepare(statement?: string): Promise<void>;
@@ -297,7 +294,7 @@ export declare class PreparedStatement extends events.EventEmitter {
   public unprepare(callback: (err?: Error) => void): PreparedStatement;
 }
 
-export declare class PreparedStatementError implements Error {
+export class PreparedStatementError implements Error {
   constructor(message: string, code?: any)
   public name: string;
   public message: string;

@@ -15,7 +15,7 @@
 > Please note the order is important of the entries in `typeRoots`.  If you want `node_modules/@types` to resolve first then move it up top. 
 
 # Summary
- Typescript typings for `mssql` `4.0.4` that support bluebird.
+ Typescript typings for `mssql` `3.0` that support bluebird.
 
  This package contains type definitions for [mssql](https://github.com/patriksimek/node-mssql).
 
