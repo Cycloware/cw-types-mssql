@@ -127,6 +127,10 @@ export interface IRecordSet<T> extends Array<T> {
   columns: IColumnMetadata;
 }
 
+export interface IResult<T> {
+  recordsets: IRecordSet<T>[];
+}
+
 type IIsolationLevel = number;
 
 export var ISOLATION_LEVEL: {
